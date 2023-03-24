@@ -1,0 +1,45 @@
+{
+    "tasks": [
+        {
+            "label": "Clean Project",
+            "command": "clean.bat",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "Compile Brainy",
+            "command": "build.bat",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": ["Clean Project"],
+        },
+        {
+            "label": "Run Brainy",
+            "command": "brainy.exe",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/bin/"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": [],
+        },
+    ],
+    
+}
