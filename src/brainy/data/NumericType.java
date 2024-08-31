@@ -43,7 +43,24 @@ public class NumericType {
 		}
 		return array;
 	}
+	
+	public static NumericType[][] matrixOf(float v[][]) {
+		if (v.length == 0)
+			throw new RuntimeException("Invalid length for matrix.");
+		NumericType matrix[][] = new NumericType[v.length][v[0].length];
+		for (int i = 0; i < v.length; i++) {
+			matrix[i] = NumericType.arrayOf(v[i]);
+		}
+		return matrix;
+	}
 
+	public static NumericType[] zeroes(int n) {
+		NumericType[] z = new NumericType[n];
+		for (int i = 0; i < n; i++)
+			z[i] = NumericType.valueOf(0);
+		return z;
+	}
+	
 	public boolean lt(NumericType v1) {
 		return this.value < v1.value;
 	}
